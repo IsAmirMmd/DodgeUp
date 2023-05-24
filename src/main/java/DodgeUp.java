@@ -14,7 +14,7 @@ public class DodgeUp extends PApplet {
 
 
     public void setup() {
-//        creating character
+        // Creating character
         bodyColor = color(255, 204, 0);
         headColor = color(255);
         bodyWidth = 20;
@@ -30,20 +30,19 @@ public class DodgeUp extends PApplet {
         // Update position based on mouse cursor
         xPos = mouseX;
         yPos = mouseY;
-
         // Draw body
         stroke(0);
         fill(bodyColor);
         rectMode(CENTER);
         rect(xPos, yPos, bodyWidth, bodyHeight);
-
         // Draw head
         fill(headColor);
         ellipse(xPos, yPos - bodyHeight / 2 - headHeight / 2, headWidth, headHeight);
-
+        // Draw legs
         strokeWeight(4);
         line(xPos - bodyWidth / 4, yPos + bodyHeight / 2, xPos - bodyWidth / 4, yPos + bodyHeight / 5 + 30);
         line(xPos + bodyWidth / 4, yPos + bodyHeight / 2, xPos + bodyWidth / 4, yPos + bodyHeight / 5 + 30);
+        
     }
 
     public void settings() {
