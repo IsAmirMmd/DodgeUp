@@ -34,15 +34,15 @@ public class DodgeUp extends PApplet {
         stroke(0);
         fill(bodyColor);
         rectMode(CENTER);
-        rect(xPos, yPos, bodyWidth, bodyHeight);
+        rect(xPos, 500, bodyWidth, bodyHeight);
         // Draw head
         fill(headColor);
-        ellipse(xPos, yPos - bodyHeight / 2 - headHeight / 2, headWidth, headHeight);
+        ellipse(xPos, 477, headWidth, headHeight);
         // Draw legs
         strokeWeight(4);
-        line(xPos - bodyWidth / 4, yPos + bodyHeight / 2, xPos - bodyWidth / 4, yPos + bodyHeight / 5 + 30);
-        line(xPos + bodyWidth / 4, yPos + bodyHeight / 2, xPos + bodyWidth / 4, yPos + bodyHeight / 5 + 30);
-        
+        line(xPos - bodyWidth / 4, 515, xPos - bodyWidth / 4, 530);
+        line(xPos + bodyWidth / 4, 515, xPos + bodyWidth / 4, 530);
+
     }
 
     public void settings() {
