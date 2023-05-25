@@ -2,16 +2,16 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 public class Block implements makeBlock, showBlock {
-    public PApplet block = DodgeUp.pApplet;
     public static ArrayList<Block> blocks= new ArrayList<>();
-    private final int width  = 50;
+    private final int width  = 60;
     private final int height = 30;
-    private float speedY = -50;
+    public float speedY = -50;
     private float BlockX;
     private float BlockY;
     private int colorR;
     private int colorG;
     private int colorB;
+
 
     public Block(float blockX, float blockY, int colorR, int colorG, int colorB) {
         this.BlockX = blockX;
@@ -21,25 +21,30 @@ public class Block implements makeBlock, showBlock {
         this.colorB = colorB;
     }
 
-    @Override
     public void makeBlocks() {
-        for (int i = 0 ; i<10 ; i++){
-            blocks.add(new Block(block.random(35,80),speedY,10,10,10));
+        for (int i = 0 ; i<100 ; i++){
+            blocks.add(new Block(DodgeUp.pApplet.random(10,70),speedY,10,10,10));
             speedY -= 50;
-            blocks.add(new Block(block.random(100,160),speedY,15,18,56));
+            blocks.add(new Block(DodgeUp.pApplet.random(110,170),speedY,15,18,56));
             speedY -= 50;
-            blocks.add(new Block(block.random(200,290),speedY,85,85,85));
+            blocks.add(new Block(DodgeUp.pApplet.random(210,280),speedY,85,85,85));
             speedY -= 50;
-            blocks.add(new Block(block.random(310,350),speedY,115,95,213));
+            blocks.add(new Block(DodgeUp.pApplet.random(320,390),speedY,115,95,213));
+            speedY -= 50;
         }
     }
 
-    @Override
     public void showBlocks() {
         for (Block tempBlock : blocks){
-            block.fill(tempBlock.colorB,tempBlock.colorG,tempBlock.colorB);
-            block.rect(tempBlock.BlockX,tempBlock.BlockY,width,height);
-            tempBlock.setBlockY(getBlockY()+10);
+            DodgeUp.pApplet.fill(tempBlock.colorB,tempBlock.colorG,tempBlock.colorB);
+            DodgeUp.pApplet.rect(tempBlock.BlockX,tempBlock.BlockY,width,height);
+        }
+    }
+
+    public void moveBlock() {
+        for (Block block : blocks){
+            block.setBlockY(getBlockY()+10);
+
         }
     }
 
