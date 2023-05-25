@@ -23,13 +23,13 @@ public class Block implements makeBlock, showBlock {
 
     public void makeBlocks() {
         for (int i = 0 ; i<100 ; i++){
-            blocks.add(new Block(DodgeUp.pApplet.random(10,70),speedY,10,10,10));
+            blocks.add(new Block(DodgeUp.pApplet.random(10,70),speedY, (int) DodgeUp.pApplet.random(0),(int) DodgeUp.pApplet.random(255),(int) DodgeUp.pApplet.random(0)));
             speedY -= 50;
-            blocks.add(new Block(DodgeUp.pApplet.random(110,170),speedY,15,18,56));
+            blocks.add(new Block(DodgeUp.pApplet.random(110,170),speedY,(int) DodgeUp.pApplet.random(255),(int) DodgeUp.pApplet.random(120),(int) DodgeUp.pApplet.random(255)));
             speedY -= 50;
-            blocks.add(new Block(DodgeUp.pApplet.random(210,280),speedY,85,85,85));
+            blocks.add(new Block(DodgeUp.pApplet.random(210,280),speedY,(int) DodgeUp.pApplet.random(0),(int) DodgeUp.pApplet.random(255),(int) DodgeUp.pApplet.random(255)));
             speedY -= 50;
-            blocks.add(new Block(DodgeUp.pApplet.random(320,390),speedY,115,95,213));
+            blocks.add(new Block(DodgeUp.pApplet.random(320,390),speedY,(int) DodgeUp.pApplet.random(255),(int) DodgeUp.pApplet.random(255),(int) DodgeUp.pApplet.random(255)));
             speedY -= 50;
         }
     }
@@ -54,5 +54,21 @@ public class Block implements makeBlock, showBlock {
 
     public void setBlockY(float blockY) {
         BlockY = blockY;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public float getBlockX() {
+        return BlockX;
+    }
+
+    public void setBlockX(float blockX) {
+        BlockX = blockX;
     }
 }
