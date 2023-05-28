@@ -1,14 +1,7 @@
 import processing.core.PApplet;
-
-
-import processing.sound.*;
-import com.jsyn.util.soundfile.*;
-
 import java.util.ArrayList;
-
 public class DodgeUp extends PApplet {
     public static PApplet pApplet;
-
     private final int width = 400;
     private final int height = 600;
     public Human human = new Human();
